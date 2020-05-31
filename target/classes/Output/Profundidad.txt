@@ -1,4 +1,6 @@
 Nuclear_Plant
 Burns_Ave
 West_Springfield_Bvld
+Ye_Olde_Fortran_St
+Krustofski_Way
 Moes_Tavern

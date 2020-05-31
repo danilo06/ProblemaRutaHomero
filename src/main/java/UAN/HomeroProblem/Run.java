@@ -9,6 +9,9 @@ import UAN.HomeroProblem.model.Interseccion;
 import UAN.HomeroProblem.model.NaryTreeNode;
 
 public class Run {
+	
+	public static String rutaEntrada = "src/main/resources/Input/Inicio.txt";
+	public static String rutaSalida = "src/main/resources/Output/";
 
 	private static boolean estadoProfun = true;
 	private static boolean estadoAmplit = true;
@@ -17,7 +20,6 @@ public class Run {
 	static int tiempoAmplitud = 0;
 
 	public static void main(String[] args) {
-
 		ArrayList<String> rutaProfundidad = new ArrayList<String>();
 		ArrayList<String> rutaAmplitud = new ArrayList<String>();
 		ArrayList<NaryTreeNode> nodosHijo = new ArrayList<NaryTreeNode>();
@@ -50,7 +52,7 @@ public class Run {
 		System.out.println();
 		ArrayList<Interseccion> listInterseccion = new ArrayList<Interseccion>();
 		try {
-			Scanner input = new Scanner(new File("src/main/resources/Input/Amplitud.txt"));
+			Scanner input = new Scanner(new File(rutaEntrada));
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
 				Interseccion calle = new Interseccion(line.split(" ")[0], line.split(" ")[1]);
@@ -68,7 +70,7 @@ public class Run {
 		FileWriter fichero = null;
 		PrintWriter pw = null;
 		try {
-			fichero = new FileWriter("src/main/resources/Output/"+nombre+".txt");
+			fichero = new FileWriter(rutaSalida+nombre+".txt");
 			pw = new PrintWriter(fichero);
 			for (int i = 0; i < ruta.size(); i++)
 				pw.println(ruta.get(i));
